@@ -1,1 +1,1 @@
-console.log("Full automation - done");
+console.log("Full automation - ts done!");
