@@ -1,19 +1,10 @@
-const form = document.querySelector('#alcohol-form') as HTMLFormElement;
-const messageDiv = document.querySelector('#message') as HTMLDivElement;
+enum AccessLevel {
+    ADMIN = 'Адмін',
+    MODERATOR = 'Модератор',
+    USER = 'Користувач',
+    GUEST = 'Гість'
+}
 
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
+ const currentLevel: AccessLevel = AccessLevel.MODERATOR;
 
-    const nameInput = document.querySelector('#name') as HTMLInputElement;
-    const ageInput = document.querySelector('#age') as HTMLInputElement;
-    
-    const name: string = nameInput.value;
-    const age: number = Number(ageInput.value);
-
-    if (age >= 18) {
-        messageDiv.textContent = `${name}, Вам дозволено купувати алкоголь.`;
-    } else {
-        messageDiv.textContent = `${name}, Вам заборонено купувати алкоголь.`;
-    }
-});
-
+console.log(`Поточний рівень доступу: ${currentLevel}`);
